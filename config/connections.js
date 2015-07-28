@@ -48,17 +48,6 @@ module.exports.connections = {
   // },
 
 
-  guide_gesperm: {
-    module: 'sails-sqlserver',
-    user: 'SP_RO',
-    password: 'password',
-    database: 'GesPerm_Dev',
-    host: 'guidesrv01',
-    port: 1433,
-    schema: true,
-    migrate: 'safe',
-  },
-
 
   // guide_ti: {
   //   module: 'sails-mssql',
