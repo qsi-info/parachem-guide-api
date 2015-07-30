@@ -17,10 +17,10 @@ module.exports = {
 
 
 	search: function (req, res) {
-		// if (req.bodyreq.body.Company !== '') {
-		// 	var company = req.body.Company;
-		// 	req.body.Company = { 'like': '%' + company + '%'};
-		// }
+		if (req.body.Company !== undefined && req.body.Company !== '') {
+			var company = req.body.Company;
+			req.body.Company = { 'like': '%' + company + '%'};
+		}
 
 		Report
 		.find()
