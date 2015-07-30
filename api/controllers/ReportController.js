@@ -17,6 +17,11 @@ module.exports = {
 
 
 	search: function (req, res) {
+		if (req.body.Company !== 'undefined') {
+			var company = req.body.Company;
+			req.body.Company = { 'like': '%' + company + '%'};
+		}
+		
 		Report
 		.find()
 		.where(req.body)
