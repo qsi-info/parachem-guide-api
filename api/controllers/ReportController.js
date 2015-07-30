@@ -17,7 +17,7 @@ module.exports = {
 
 
 	search: function (req, res) {
-		if (req.body.Company !== 'undefined' && req.body.Company !== '') {
+		if (req.body.Company !== '') {
 			var company = req.body.Company;
 			req.body.Company = { 'like': '%' + company + '%'};
 		}
