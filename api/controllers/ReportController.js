@@ -13,7 +13,17 @@ module.exports = {
 		.then(function (reports) {
 			res.json(reports);
 		});
-	}
+	},
+
+
+	search: function (req, res) {
+		Report
+		.find()
+		.where(req.body)
+		.then(function (reports) {
+			res.json(reports);
+		});
+	},
 	
 };
 
