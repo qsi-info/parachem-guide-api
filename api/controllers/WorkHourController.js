@@ -25,7 +25,10 @@ module.exports = {
 				acc += f.Cost;
 			})
 			return res.json({ total: acc });
-		});
+		})
+		.fail(function () {
+			return res.json({ total: 0 });
+		})
 	},
 
 	
