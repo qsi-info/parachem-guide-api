@@ -32,7 +32,15 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  '/' : function (req, res) {
+    res.ok();
+  },
+
   'post /report/search' : 'ReportController.search',
+
+  'post /workhour/calculate' : 'WorkHourController.calculate',
+  'post /part/calculate' : 'PartController.calculate',
+  'post /other/calculate' : 'OtherController.calculate',
 
   /***************************************************************************
   *                                                                          *
