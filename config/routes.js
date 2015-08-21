@@ -37,10 +37,14 @@ module.exports.routes = {
   },
 
   'post /report/search' : 'ReportController.search',
+  'post /partdetail/search' : 'PartDetailController.search',
+  'post /otherdetail/search' : 'OtherDetailController.search',
+  'post /workhourdetail/search' : 'WorkHourDetailController.search',
 
   'post /workhour/calculate' : 'WorkHourController.calculate',
   'post /part/calculate' : 'PartController.calculate',
   'post /other/calculate' : 'OtherController.calculate',
+  'post /report/calculate' : 'ReportController.calculate',
 
   /***************************************************************************
   *                                                                          *

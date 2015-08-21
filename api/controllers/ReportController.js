@@ -7,14 +7,6 @@
 
 module.exports = {
 
-	all: function (req, res) {
-		Report
-		.find()
-		.then(function (reports) {
-			res.json(reports);
-		});
-	},
-
 
 	search: function (req, res) {
 		if (req.body.Company !== undefined && req.body.Company !== '') {
@@ -27,8 +19,26 @@ module.exports = {
 		.where(req.body)
 		.then(function (reports) {
 			res.json(reports);
-		});
+		})
+		.fail(res.serverError);
 	},
+
+
+	calculate: function (req, res) {
+		Report
+		.find()
+		.where(req.body)
+		.then(function (founds) {
+			var acc = 0;
+			founds.forEach(function (f) {
+				acc += f.Price;
+			})
+			return res.json({ total: acc });
+		})
+		.fail(function () {
+			return res.json({ total: 0 });
+		})
+	}
 	
 };
 
