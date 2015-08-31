@@ -39,6 +39,11 @@ module.exports = {
 	    type: 'string',
 	  },
 
+	  WorkOrderDescription: {
+	    type: 'string',
+	  },
+
+
   }
 };
 

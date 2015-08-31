@@ -43,6 +43,11 @@ module.exports = {
 	  	type: 'datetime',
 	  },
 
+	  WorkOrderDescription: {
+	    type: 'string',
+	  },
+
+
   }
   
 };
