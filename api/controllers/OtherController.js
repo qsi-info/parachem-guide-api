@@ -17,6 +17,11 @@ module.exports = {
 	},
 
 	calculate: function (req, res) {
+		if (req.body.Company !== undefined && req.body.Company !== '') {
+			var company = req.body.Company;
+			req.body.Company = { 'like': '%' + company + '%'};
+		}
+
 		Other
 		.find()
 		.where(req.body)
