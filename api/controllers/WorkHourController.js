@@ -26,15 +26,18 @@ module.exports = {
 		.where(req.body)
 		.then(function (founds) {
 			var acc = 0;
+			var hours = 0;
 			founds.forEach(function (f) {
 				acc += f.Cost;
+				hours += f.NbHour
 			})
-			return res.json({ total: acc });
+			return res.json({ total: acc, hours: hours });
 		})
 		.fail(function () {
 			return res.json({ total: 0 });
 		})
 	},
+
 
 	
 };
