@@ -28,6 +28,7 @@ module.exports = {
 		.then(function (founds) {
 			var acc = 0;
 			founds.forEach(function (f) {
+				// var q = f.Quantity;
 				acc += f.Cost;
 			})
 			return res.json({ total: acc });
