@@ -45,6 +45,7 @@ module.exports.routes = {
   'post /part/calculate' : 'PartController.calculate',
   'post /other/calculate' : 'OtherController.calculate',
   'post /report/calculate' : 'ReportController.calculate',
+  'post /report-po/calculate' : 'ReportController.calculatePO',
 
   /***************************************************************************
   *                                                                          *

@@ -43,6 +43,27 @@ module.exports = {
 		.fail(function () {
 			return res.json({ total: 0 });
 		})
+	},
+
+	calculatePO: function (req, res) {
+		if (req.body.Company !== undefined && req.body.Company !== '') {
+			var company = req.body.Company;
+			req.body.Company = { 'like': '%' + company + '%'};
+		}
+
+		Report
+		.find()
+		.where(req.body)
+		.then(function (founds) {
+			var acc = 0;
+			founds.forEach(function (f) {
+				acc += f.PricePO;
+			})
+			return res.json({ total: acc });
+		})
+		.fail(function () {
+			return res.json({ total: 0 });
+		})
 	}
 	
 };
