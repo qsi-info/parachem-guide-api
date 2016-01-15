@@ -39,6 +39,10 @@ module.exports = {
   		type: 'float',
   	},
 
+    PricePO: {
+      type: 'float',
+    },
+
     AccountingCode: {
       type: 'string',
     },
